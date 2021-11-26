@@ -1,11 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-  FlatList,
-  Dimensions,
-} from 'react-native';
+import {View, Text, StyleSheet, FlatList, Dimensions} from 'react-native';
 import {StackNavigationOptions} from '@react-navigation/stack';
 import {getUsers} from '../services/Services';
 const windowWidth = Dimensions.get('window').width;
@@ -18,7 +12,8 @@ const UserDetailsScreen = ({route, navigation}) => {
   };
   const [user, setUser] = useState([]);
   useEffect(() => {
-    getUserDetails().then((data: any) => {
+    getUserDetails().then(data => {
+      console.log('data==>', data);
       setUser([data]);
     });
   }, []);
